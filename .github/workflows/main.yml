@@ -8,5 +8,14 @@ jobs:
   cobol-check:
     runs-on: ubuntu-latest
 
-steps:
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Java
+      uses: action/setup-java@v2 
+      with:
+       java-version '11'
+   -name: Run COBOL Check
+    env:
+      ZOWE_USERNAME: ${{ secrets.ZORE_USERNAME}}
+      
 
