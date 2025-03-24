@@ -1,5 +1,12 @@
 name: COBOL Check Automation
 
 on:
-Push:
-Branches: [main]
+  push:
+    branches: [ main ]
+
+jobs:
+  cobol-check:
+    runs-on: ubuntu-latest
+
+steps:
+
