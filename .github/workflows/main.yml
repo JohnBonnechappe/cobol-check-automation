@@ -16,6 +16,11 @@ jobs:
        java-version '11'
    -name: Run COBOL Check
     env:
-      ZOWE_USERNAME: ${{ secrets.ZORE_USERNAME}}
+      ZOWE_USERNAME: ${{ secrets.ZOWE_USERNAME }}
+      ZOWE_PASSWORD: ${{ secrets.ZOWE_PASSWORD }}
+      run: |
+        # Here we'll add our commands to run cobolcheck
+        echo "Running COBOL check"
+        # Add actual cobolcheck commands here
       
 
