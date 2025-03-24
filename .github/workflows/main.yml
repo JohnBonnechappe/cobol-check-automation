@@ -1,0 +1,5 @@
+name: COBOL Check Automation
+
+on:
+Push:
+Branches: [main]
