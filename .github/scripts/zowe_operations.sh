@@ -1,6 +1,6 @@
 #!/bin/bash
 
-zowe_operations.sh
+#zowe_operations.sh
 
 LOWECASE_USERNAME=$(echo "ZOWE_USERNAME" | tr '[:upper:]' '[:lower:]')
 
