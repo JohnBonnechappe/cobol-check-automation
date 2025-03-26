@@ -38,14 +38,14 @@ else
 fi
 
 #copy the jcl
-if [-f "${program).JCL"]; then
+if [-f "${program}.JCL"]; then
 if cp ${program}.JCL "//'{$ZOWE_USERNAME}.JCL($program)'"; then
         echo "copied"
     else
         echo "failed to copy"
     fi
 else
-    echo "$(program) jcl not found"
+    echo "$({program}.jcl not found"
 fi
 }
 
