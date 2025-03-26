@@ -45,7 +45,7 @@ if cp ${program}.JCL "//'{$ZOWE_USERNAME}.JCL($program)'"; then
         echo "failed to copy"
     fi
 else
-    echo "$({program}.jcl not found"
+    echo "${program}.jcl not found"
 fi
 }
 
