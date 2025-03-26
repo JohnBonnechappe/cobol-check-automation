@@ -8,7 +8,7 @@ java -version
 
 ZOWE_USERNAME="Z63454"
 
-cd cobolcheck
+cd cobol-check
 echo "Changed to $(pwd)"
 ls -al
 
