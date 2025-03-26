@@ -20,7 +20,7 @@ chmod +x linux_gnucobol_run_tests
 echo "made linux_gnucobol exe."
 cd ..
 
-run cobolcheck() {
+run_cobolcheck() {
 program = $1
 echo "Running cobolcheck for $program"
 
