@@ -21,32 +21,32 @@ echo "made linux_gnucobol exe."
 cd ..
 
 run_cobolcheck() {
-program = $1
-echo "Running cobolcheck for $program"
+  program=$1
+  echo "Running cobolcheck for $program"
 
-./cobolcheck -p $program
-echo "completed for $program"
+  ./cobolcheck -p $program
+  echo "completed for $program"
 
-if [-f "CC##99.CBL"]; then
-    if cp CC##99.CBL "//'{$ZOWE_USERNAME}.CBL($program)'"; then
-        echo "copied"
-    else
-        echo "failed to copy"
-    fi
-else
-    echo "CC##99 not found for $program"
-fi
+  if [-f "CC##99.CBL"]; then
+      if cp CC##99.CBL "//'{$ZOWE_USERNAME}.CBL($program)'"; then
+          echo "copied"
+      else
+          echo "failed to copy"
+      fi
+  else
+      echo "CC##99 not found for $program"
+  fi
 
 #copy the jcl
-if [-f "${program}.JCL"]; then
-if cp ${program}.JCL "//'{$ZOWE_USERNAME}.JCL($program)'"; then
-        echo "copied"
-    else
-        echo "failed to copy"
-    fi
-else
-    echo "${program}.jcl not found"
-fi
+  if [-f "${program}.JCL"]; then
+  if cp ${program}.JCL "//'{$ZOWE_USERNAME}.JCL($program)'"; then
+          echo "copied"
+      else
+          echo "failed to copy"
+      fi
+  else
+      echo "${program}.jcl not found"
+  fi
 }
 
 for program in NUMBERS EMPPAY DEPTPAY ; do
