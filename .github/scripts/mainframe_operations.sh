@@ -27,7 +27,7 @@ run_cobolcheck() {
   ./cobolcheck -p $program
   echo "completed for $program"
 
-  if [-f "CC##99.CBL"]; then
+  if [ -f "CC##99.CBL" ]; then
       if cp CC##99.CBL "//'{$ZOWE_USERNAME}.CBL($program)'"; then
           echo "copied"
       else
@@ -38,7 +38,7 @@ run_cobolcheck() {
   fi
 
 #copy the jcl
-  if [-f "${program}.JCL"]; then
+  if [ -f "${program}.JCL" ]; then
   if cp ${program}.JCL "//'{$ZOWE_USERNAME}.JCL($program)'"; then
           echo "copied"
       else
