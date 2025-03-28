@@ -1,8 +1,11 @@
 name: COBOL Check Automation
 
+run-name: ${{github.actor}} has triggered this workflow
+
 on:
   push:
     branches: [ main ]
+    paths: '**.CBL, **.JCL'
 
 jobs:
   cobol-check:
