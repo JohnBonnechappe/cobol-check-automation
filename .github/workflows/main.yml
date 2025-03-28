@@ -5,7 +5,7 @@ run-name: ${{github.actor}} has triggered this workflow
 on:
   push:
     branches: [ main ]
-    paths: '**.CBL, **.JCL'
+#    paths: '**.CBL, **.JCL'
 
 jobs:
   cobol-check:
