@@ -19,6 +19,9 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
+
+    - name: Install ZOWE CLI
+      run: npn install -g @zowe/cli@latest
         
     - name: Setup Mainframe Environment and Upload COBOL Check
       env:
