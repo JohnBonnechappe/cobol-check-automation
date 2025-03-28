@@ -1,6 +1,7 @@
 //NUMBERSJ JOB 1,NOTIFY=&SYSUID,TIME=(1,0)
 //********************************************************
 //*  run numbers program v 1.0
+//*  to test github workflows
 //********************************************************
 //COBRUN  EXEC IGYWCL
 //COBOL.SYSIN  DD DSN=&SYSUID..CBL(CBL0001),DISP=SHR
