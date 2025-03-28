@@ -42,6 +42,6 @@ jobs:
       # Here we'll add our commands to setup cobolcheck
       #  sshpass -p "$ZOWE-PASSWORD" ssh -o "StrictHostKeyChecking"=no $ZOWE_USERNAME@204.90.115.200 'sh -s' < .github/scripts/mainframe_operations.sh
       run: |
-        .github/scripts/mainframe_operations.sh
+        .github/scripts/mainframe_operations_t.sh
       # Add actual cobolcheck commands here
 
