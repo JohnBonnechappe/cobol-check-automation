@@ -2,7 +2,7 @@
 
 #zowe_operations.sh
 
-LOWECASE_USERNAME=$(echo "ZOWE_USERNAME" | tr '[:upper:]' '[:lower:]')
+LOWERCASE_USERNAME=$(echo "ZOWE_USERNAME" | tr '[:upper:]' '[:lower:]')
 
 if !zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" &>/dev/null; then
     echo "directory does not exist. creating it..."
@@ -15,5 +15,5 @@ zowe zos-files upload dir-to-uss "./cobol-check" "/z/$LOWERCASE_USERNAME/cobolch
     --binary-files "cobol-check-0.2.9.jar"
 
 echo "Verifying upload"
-zow zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck"
+zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck"
 echo "Done"
