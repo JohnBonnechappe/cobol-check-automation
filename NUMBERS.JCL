@@ -1,6 +1,6 @@
 //NUMBERSJ JOB 1,NOTIFY=&SYSUID,TIME=(1,0)
 //********************************************************
-//*  run numbers program v 1.4
+//*  run numbers program v 1.5
 //*  to test github workflows
 //********************************************************
 //COBRUN  EXEC IGYWCL
