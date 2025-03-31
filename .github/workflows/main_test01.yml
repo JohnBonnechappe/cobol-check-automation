@@ -5,7 +5,7 @@ run-name: ${{github.actor}} has triggered this workflow
 on:
   push:
     branches: [ main ]
-    paths: ['**.TXT' , '**.DOC']
+    paths: ['**.txt' , '**.DOC']
 
 jobs:
   gwf-test01:
