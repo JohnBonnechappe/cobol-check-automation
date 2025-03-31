@@ -7,14 +7,10 @@ on:
     branches: [ main ]
     paths: ['**.pdf' , '**.DOC']
 
-# accept parameters from a manual run.
+# accep a manual run from the app or from http.
   workflow_dispatch:
-    inputs:
-      testParam1:
-        description: "first parameter"
-        required:  true
-        default: "species"
-
+  repository_dispatch:
+   
 jobs:
   gwf-test01:
     runs-on: ubuntu-latest
@@ -23,5 +19,9 @@ jobs:
       run: |
          echo "Hi World\n"
          echo "Param=${{github.event.inputs.testParam1}}"
+    
+    - name: check_node
+      run: node -v
+      
       
       
