@@ -12,6 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: gwf_name01
-        echo "Hi World"
+      run: echo "Hi World"
       
       
