@@ -7,16 +7,21 @@ on:
     branches: [ main ]
     paths: ['**.pdf' , '**.DOC']
 
- # workflow-dispatch:
- #   input:
-    
-  
+# accept parameters from a manual run.
+  workflow_dispatch:
+    inputs:
+      testParam1:
+        description: "first parameter"
+        required:  true
+        default: "species"
 
 jobs:
   gwf-test01:
     runs-on: ubuntu-latest
     steps:
     - name: gwf_name01
-      run: echo "Hi World"
+      run: |
+         echo "Hi World\n"
+         echo "Param=${{github.event.inputs.testParam1}}"
       
       
