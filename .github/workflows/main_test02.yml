@@ -1,0 +1,22 @@
+name: Workflow Test 01
+
+run-name: ${{github.actor}} has triggered this workflow
+
+on:
+  push:
+    branches: [ main ]
+    paths: ['**.pdf' , '**.DOC']
+
+ # workflow-dispatch:
+ #   input:
+    
+  
+
+jobs:
+  gwf-test01:
+    runs-on: ubuntu-latest
+    steps:
+    - name: gwf_name01
+      run: echo "Hi World"
+      
+      
