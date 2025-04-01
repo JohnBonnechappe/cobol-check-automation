@@ -1,6 +1,6 @@
 name: COBOL Check Automation
 
-run-name: ${{github.actor}} has triggered this workflow
+run-name: ${{github.actor}} has triggered ${{github.workflow}}
 
 on:
   push:
