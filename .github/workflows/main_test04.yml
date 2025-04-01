@@ -32,6 +32,12 @@ jobs:
 
     - name: Install ZOWE CLI
       run: npm install -g @zowe/cli@latest
+
+    - name: npmList2
+      run: npm list
+
+    - name: npmListG2
+      run: npm list -g
       
     - name: check_default
       run: echo "$(pwd)"
