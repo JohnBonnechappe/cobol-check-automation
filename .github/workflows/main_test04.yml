@@ -1,0 +1,36 @@
+
+name: Workflow Test 03
+
+run-name: ${{github.actor}} has triggered this workflow
+
+on:
+  push:
+    branches: [ main ]
+    paths: ['**.pdf' , '**.DOC']
+
+# accep a manual run from the app or from http.
+  workflow_dispatch:
+  repository_dispatch:
+   
+jobs:
+  gwf-test01:
+    runs-on: ubuntu-latest
+    steps:
+    - name: gwf_name01
+      run: |
+         echo "Hi World\n"
+         echo "Param=${{github.event.inputs.testParam1}}"
+    
+    - name: check_node
+      run: node -v
+      
+    - name: check_default
+      run: echo"$(pwd)"
+
+    - name: check_zowe
+      run: zowe --version
+
+    - name: cleanup
+      run: echo "Job done"
+      
+#***************************************************
