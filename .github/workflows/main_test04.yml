@@ -1,7 +1,7 @@
 
-name: Workflow Test 04.1
+name: Workflow Test 04.2
 
-run-name: ${{github.actor}} has triggered this workflow
+run-name: ${{github.actor}} has triggered ${{github.name}}
 
 on:
   push:
@@ -23,6 +23,12 @@ jobs:
     
     - name: check_node
       run: node -v
+
+    - name: npmList
+      run: npm list
+
+    - name: npmListG
+      run: npm list -g
 
     - name: Install ZOWE CLI
       run: npm install -g @zowe/cli@latest
