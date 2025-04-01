@@ -25,7 +25,7 @@ jobs:
       run: node -v
       
     - name: check_default
-      run: echo"$(pwd)"
+      run: echo "$(pwd)"
 
     - name: check_zowe
       run: zowe --version
