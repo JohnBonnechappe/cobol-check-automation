@@ -1,5 +1,5 @@
 
-name: Workflow Test 04
+name: Workflow Test 04.1
 
 run-name: ${{github.actor}} has triggered this workflow
 
