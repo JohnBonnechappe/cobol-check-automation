@@ -6,6 +6,7 @@ on:
   push:
     branches: [ main ]
     paths: ['**.CBL' , '**.JCL']
+  workflow_dispatch:
 
 jobs:
   cobol-check:
