@@ -4,7 +4,7 @@ IDENTIFICATION DIVISION.
 ENVIRONMENT DIVISION.
 DATA DIVISION.
 WORKING-STORAGE SECTION.
-  77 rec-counter  PIC 9(4).
+  77 rec-counter           PIC 9(4).
 
   01 emp-record.
      03 emp-name.
@@ -13,20 +13,21 @@ WORKING-STORAGE SECTION.
      03 emp-hourly-rate    PIC  9(3)V99.
      03 emp-ot-rate        PIC  V99.   
      03 emp-reward         PIC  V99.
-     03 hours              PIC  9(3).
-     03 pay-week           PIC  9(7)V99.
-     03 pay-month          PIC  9(7)V99.
+     03 emp-hours          PIC  9(3).
+     03 emp-pay-week       PIC  9(7)V99.
+     03 emp-pay-month      PIC  9(7)V99.
 
 PROCEDURE DIVISION.
+  DISPLAY "In EMPPAY Version 1.0"
+
   PERFORM initialization
   PERFORM payment-weekly
   PERFORM payment-monthly
   PERFORM show-output
+
   STOP RUN
   .
 initialization.
-  DISPLAY "In EMPPAY Version 1.0"
-
   MOVE  "John"        TO  emp-fname
   MOVE  "Bonnechappe" TO  emp-lname
   MOVE  19            TO  emp-hours
