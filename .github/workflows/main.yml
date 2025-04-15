@@ -13,7 +13,7 @@ jobs:
   cobol-check:
     timeout-minutes: 5
     runs-on: ubuntu-latest
-     env:
+    env:
         ZOWE_CLI_HOME: ".github/.zowe"
         ZOWE_USERNAME: ${{ secrets.ZOWE_USERNAME }}
         ZOWE_PASSWORD: ${{ secrets.ZOWE_PASSWORD }}
@@ -23,7 +23,7 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: init
-      run |
+      run: |
         echo "Running Cobol Check WOrkflow"
         echo "home=$ZOWE_CLI_HOME"
         
