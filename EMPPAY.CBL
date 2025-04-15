@@ -3,6 +3,20 @@ IDENTIFICATION DIVISION.
 ENVIRONMENT DIVISION.
 DATA DIVISION.
 WORKING-STORAGE SECTION.
+  77 rec-counter  PIC 9(4).
+
+  01 emp-record.
+     03 emp-name
+        05 emp-fname
+        05 emp-
+    03 emp-hourly-rate
+emp-ot-rate
+emp-reward
+hours
+pay-week
+pay-month
+
+
 PROCEDURE DIVISION.
   PERFORM initialization
   PERFORM payment-weekly
@@ -31,14 +45,23 @@ payment-weekly.
 
   .
 payment-monthly.
-IF emp-hours > 150
-ELSE
-END-IF
+  IF emp-hours > 150
+    MOVE 0.50 TO emp-reward
+  ELSE
+    MOVE ZERO TO emp-reward
+  END-IF
 
+  COMPUTE emp-pay-month
+        =   (emp-pay-week * 4) * (1 + emp-reward)
+  END-COMPUTE
   .
+
 show-output.
-END-
+  DISPLAY  "Name               :" emp-name
+  DISPLAY  "Hours Worked       :" emp-hours
+  DISPLAY  "Hourly rate        :" emp-hourly-rate
+  DISPLAY  "OT rate            :" emp-ot-rate
+  DISPLAY  "Gross pay per week :" emp-pay-week
+  DISPLAY  "Gross pay per month:" emp-pay-month
+  DISPLAY  "Hi World"
   .
-
-
-  
