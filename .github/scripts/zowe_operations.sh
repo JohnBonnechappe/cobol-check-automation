@@ -17,5 +17,5 @@ else
 fi
 
 echo "Verifying upload"
-zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck"
+zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD
 echo "Done"
