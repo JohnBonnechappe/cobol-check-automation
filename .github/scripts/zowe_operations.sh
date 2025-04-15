@@ -4,9 +4,11 @@
 
 LOWERCASE_USERNAME=$(echo "ZOWE_USERNAME" | tr '[:upper:]' '[:lower:]')
 
-if !zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" &>/dev/null; then
+tst = zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD
+
+if ! tst &>/dev/null; then
     echo "cobolcheck directory does not exist. creating it..."
-    zowe zos-files create uss-directory /z/$LOWERCASE_USERNAME/cobolcheck--u $ZOWE_USERNAME --pw $ZOWE_PASSWORD
+    zowe zos-files create uss-directory /z/$LOWERCASE_USERNAME/cobolcheck --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD
 
     echo "uploading cobolcheck"
 
