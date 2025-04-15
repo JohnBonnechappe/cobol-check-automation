@@ -17,14 +17,27 @@ initialization.
   MOVE  23.5          TO  emp-hourly-rate
   .
 payment-weekly.
-  IF emp-hours > 
+  IF emp-hours >= 40
+    MOVE 0.25 TO emp-ot-rate
+  ELSE IF emp-hours >= 50
+    MOVE 0.50 TO emp-ot-rate
   ELSE
- IF
-""
+    MOVE ZERO TO emp-ot-rate
+  END-IF
+
+  COMPUTE emp-pay-week
+        = (emp-hours * emp-hourly-rate) * (1 + emp-ot-rate)
+  END-COMPUTE
+
   .
 payment-monthly.
+IF emp-hours > 150
+ELSE
+END-IF
+
   .
 show-output.
+END-
   .
 
 
