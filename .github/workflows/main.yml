@@ -19,8 +19,14 @@ jobs:
         ZOWE_PASSWORD: ${{ secrets.ZOWE_PASSWORD }}
 
     steps:
-    - uses: actions/checkout@v3
     
+    - uses: actions/checkout@v3
+
+    - name: init
+      run |
+        echo "Running Cobol Check WOrkflow"
+        echo "home=$ZOWE_CLI_HOME"
+        
     - name: Set up Java
       uses: actions/setup-java@v2 
       with:
