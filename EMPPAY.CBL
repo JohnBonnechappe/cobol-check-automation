@@ -1,4 +1,10 @@
 IDENTIFICATION DIVISION.
+************************************************
+*  Program ID:   EMPPAY
+*  Program name: Calculate employee pay.
+*  Summary:      Calculate pay taking into account overtime.
+************************************************
+*
   PROGRAM-ID. EMPPAY.
   AUTHOR. John Braddock
 ENVIRONMENT DIVISION.
