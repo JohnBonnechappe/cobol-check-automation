@@ -33,8 +33,8 @@ jobs:
 #        java-version: '11'
 #        distribution: 'adopt'
 
-    - name: Check node
-      run: node -v
+ #   - name: Check node
+ #     run: node -v
       
     - name: Install ZOWE CLI
       run: npm install -g @zowe/cli@latest
@@ -52,7 +52,7 @@ jobs:
         echo "---> zowe ops"
         # Here we'll add our commands to setup cobolcheck
         #chmod +x .github/scripts/zowe_operations.sh
-        #.github/scripts/zowe_operations.sh
+        .github/scripts/zowe_operations_t.sh
         # Add actual cobolcheck commands here
         
     - name: Run COBOL Check on Mainframe
