@@ -49,9 +49,10 @@ jobs:
         ZOWE_USERNAME:               ${{ secrets.ZOWE_USERNAME }}
         ZOWE_PASSWORD:               ${{ secrets.ZOWE_PASSWORD }}
       run: |
+        echo "---> zowe ops"
         # Here we'll add our commands to setup cobolcheck
-        chmod +x .github/scripts/zowe_operations.sh
-        .github/scripts/zowe_operations.sh
+        #chmod +x .github/scripts/zowe_operations.sh
+        #.github/scripts/zowe_operations.sh
         # Add actual cobolcheck commands here
         
     - name: Run COBOL Check on Mainframe
@@ -61,7 +62,7 @@ jobs:
       # Here we'll add our commands to setup cobolcheck
       #  sshpass -p "$ZOWE-PASSWORD" ssh -o "StrictHostKeyChecking"=no $ZOWE_USERNAME@204.90.115.200 'sh -s' < .github/scripts/mainframe_operations.sh
       run: |
-        echo "mainframe ops"
+        echo "---> mainframe ops"
       #  .github/scripts/mainframe_operations_t.sh
       # Add actual cobolcheck commands here
 
