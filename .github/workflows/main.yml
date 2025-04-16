@@ -1,4 +1,4 @@
-name: COBOL Check Automation V1.0
+name: COBOL Check Automation V1.1
 
 run-name: ${{github.actor}} has triggered ${{github.workflow}}
 
@@ -43,20 +43,20 @@ jobs:
       run: zowe config list
     
     - name: Setup Mainframe Environment and Upload COBOL Check
-#      env:
+      env:
 #        ZOWE_OPT_HOST:               204.90.115.200
 #        ZOWE_OPT_PORT:               10443
 #        ZOWE_OPT_USERNAME:           ${{ secrets.ZOWE_USERNAME }}
 #        ZOWE_OPT_PASSWORD:           ${{ secrets.ZOWE_PASSWORD }}
 #        ZOWE_OPT_REJECT_UNAUTHORIZED: false
-#        ZOWE_USERNAME:               ${{ secrets.ZOWE_USERNAME }}
-#        ZOWE_PASSWORD:               ${{ secrets.ZOWE_PASSWORD }}
+        ZOWE_USERNAME:               ${{ secrets.ZOWE_USERNAME }}
+        ZOWE_PASSWORD:               ${{ secrets.ZOWE_PASSWORD }}
       run: |
         echo "---> zowe ops"
         # Here we'll add our commands to setup cobolcheck
         chmod +x .github/scripts/zowe_operations_t.sh
         ls -l .github/scripts/
-        zowe zos-files list ds $ZOWE_USERNAME  --user $ZOWE_USERNAME  --password $ZOWE_PASSWORD
+        zowe zos-files list ds $ZOWE_USERNAME  --u $ZOWE_USERNAME  --pw $ZOWE_PASSWORD
      #   .github/scripts/zowe_operations_t.sh
         # Add actual cobolcheck commands here
         
