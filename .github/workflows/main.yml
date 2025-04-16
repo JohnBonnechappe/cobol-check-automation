@@ -41,13 +41,13 @@ jobs:
         
     - name: Setup Mainframe Environment and Upload COBOL Check
       env:
-        ZOWE_OPT_HOST:               204.90.115.200
-        ZOWE_OPT_PORT:               10443
-        ZOWE_OPT_USERNAME:           ${{ secrets.ZOWE_USERNAME }}
-        ZOWE_OPT_PASSWORD:           ${{ secrets.ZOWE_PASSWORD }}
-        ZOWE_OPT_REJECT_UNAUTHORIZED: false
-        ZOWE_USERNAME:               ${{ secrets.ZOWE_USERNAME }}
-        ZOWE_PASSWORD:               ${{ secrets.ZOWE_PASSWORD }}
+#        ZOWE_OPT_HOST:               204.90.115.200
+#        ZOWE_OPT_PORT:               10443
+#        ZOWE_OPT_USERNAME:           ${{ secrets.ZOWE_USERNAME }}
+#        ZOWE_OPT_PASSWORD:           ${{ secrets.ZOWE_PASSWORD }}
+#        ZOWE_OPT_REJECT_UNAUTHORIZED: false
+#        ZOWE_USERNAME:               ${{ secrets.ZOWE_USERNAME }}
+#        ZOWE_PASSWORD:               ${{ secrets.ZOWE_PASSWORD }}
       run: |
         echo "---> zowe ops"
         ls -l .github/scripts/
@@ -66,6 +66,9 @@ jobs:
       run: |
         echo "---> mainframe ops"
         chmod +x .github/scripts/mainframe_operations_t.sh
-      #  .github/scripts/mainframe_operations_t.sh
+        .github/scripts/mainframe_operations_t.sh
       # Add actual cobolcheck commands here
+
+    - name: Done
+      run: echo "Done"
 
