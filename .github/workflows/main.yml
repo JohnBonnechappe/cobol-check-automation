@@ -41,19 +41,24 @@ jobs:
 
 #    - name: check_zowe_config
 #      run: zowe config list
+
+    - name: setup_lowercase
+      run: |
+        LOWERCASE_USERNAME=$(echo "$ZOWE_USERNAME" | tr '[:upper:]' '[:lower:]')
+        echo "lowercase un=$LOWERCASE_USERNAME"
+        echo "LOWERCASE_USERNAME=$LOWERCASE_USERNAME" >> $GITHUB_ENV
+
+    - name: Check USS files
+      run: |
+        zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD
     
     - name: Setup Mainframe Environment and Upload COBOL Check
-#      env:
-#        ZOWE_USERNAME:               ${{ secrets.ZOWE_USERNAME }}
-#        ZOWE_PASSWORD:               ${{ secrets.ZOWE_PASSWORD }}
       run: |
         echo "---> zowe ops"
         # Here we'll add our commands to setup cobolcheck
         chmod +x .github/scripts/zowe_operations_t.sh
         ls -l .github/scripts/
-        LOWERCASE_USERNAME=$(echo "$ZOWE_USERNAME" | tr '[:upper:]' '[:lower:]')
-        echo "lowercase un=$LOWERCASE_USERNAME"
-        zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD
+   
 #        zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD
 
 #        .github/scripts/zowe_operations_t.sh
