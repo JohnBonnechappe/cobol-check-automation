@@ -54,7 +54,8 @@ jobs:
         # Here we'll add our commands to setup cobolcheck
         chmod +x .github/scripts/zowe_operations_t.sh
         ls -l .github/scripts/
-        .github/scripts/zowe_operations_t.sh
+        zowe zos-files list ds $ZOWE_USERNAME  --user $ZOWE_USERNAME  --password $ZOWE_PASSWORD
+     #   .github/scripts/zowe_operations_t.sh
         # Add actual cobolcheck commands here
         
     - name: Run COBOL Check on Mainframe
