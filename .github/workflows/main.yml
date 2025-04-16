@@ -52,9 +52,9 @@ jobs:
         chmod +x .github/scripts/zowe_operations_t.sh
         ls -l .github/scripts/
         LOWERCASE_USERNAME=$(echo "$ZOWE_USERNAME" | tr '[:upper:]' '[:lower:]')
-        echo "lowercase un=$LOWER_USERNAME"
-        zowe zos-files list uss-files "/z/$LOWER_USERNAME" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD
-#        zowe zos-files list uss-files "/z/$LOWER_USERNAME/cobolcheck" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD
+        echo "lowercase un=$LOWERCASE_USERNAME"
+        zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD
+#        zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD
 
 #        .github/scripts/zowe_operations_t.sh
         # Add actual cobolcheck commands here
