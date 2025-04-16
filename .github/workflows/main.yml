@@ -40,7 +40,7 @@ jobs:
       run: npm install -g @zowe/cli@latest
         
     - name: Setup Mainframe Environment and Upload COBOL Check
-      env:
+#      env:
 #        ZOWE_OPT_HOST:               204.90.115.200
 #        ZOWE_OPT_PORT:               10443
 #        ZOWE_OPT_USERNAME:           ${{ secrets.ZOWE_USERNAME }}
