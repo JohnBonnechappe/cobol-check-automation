@@ -56,7 +56,7 @@ jobs:
         echo "cobolcheck_exists=$rtn_sts" >> $GITHUB_ENV
     
     - name: Setup Mainframe Environment and Upload COBOL Check
-      if: ${{cobolcheck_exists != true}}
+      if: ${{$cobolcheck_exists != true}}
       run: |
        # Here we'll add our commands to setup cobolcheck
        
