@@ -51,7 +51,7 @@ jobs:
     - name: Check USS files
       run: |
         rtn_sts=false
-        zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/assembler" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD && rtn_sts=true
+        zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD && rtn_sts=true
         echo "return=$rtn_sts"
     
     - name: Setup Mainframe Environment and Upload COBOL Check
