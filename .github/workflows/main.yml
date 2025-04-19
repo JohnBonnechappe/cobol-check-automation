@@ -50,8 +50,9 @@ jobs:
 
     - name: Check USS files
       run: |
-        zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/jnk" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD && tst = true
-        echo "return=$tst"
+        rtn_sts=false
+        zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/jnk" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD && rtn_sts = true
+        echo "return=$rtn_sts"
     
     - name: Setup Mainframe Environment and Upload COBOL Check
       run: |
