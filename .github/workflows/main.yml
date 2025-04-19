@@ -53,15 +53,14 @@ jobs:
         rtn_sts=false
         zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD && rtn_sts=true
         echo "return=$rtn_sts"
+        echo "cobolcheck_exists=$rtn_sts" >> $GITHUB_ENV
     
     - name: Setup Mainframe Environment and Upload COBOL Check
       run: |
-        echo "---> zowe ops"
-        # Here we'll add our commands to setup cobolcheck
+       # Here we'll add our commands to setup cobolcheck
+       if. $cobolcheck_exists != true
         chmod +x .github/scripts/zowe_operations_t.sh
-        ls -l .github/scripts/
-#        zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD
-#        .github/scripts/zowe_operations_t.sh
+        .github/scripts/zowe_operations_t.sh
         # Add actual cobolcheck commands here
         
     - name: Run COBOL Check on Mainframe
