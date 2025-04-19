@@ -58,8 +58,8 @@ jobs:
     - name: Setup Mainframe Environment and Upload COBOL Check
       run: |
        # Here we'll add our commands to setup cobolcheck
-       if. $cobolcheck_exists != true
-        chmod +x .github/scripts/zowe_operations_t.sh
+       if: ${{cobolcheck_exists != true))
+         chmod +x .github/scripts/zowe_operations_t.sh
         .github/scripts/zowe_operations_t.sh
         # Add actual cobolcheck commands here
         
