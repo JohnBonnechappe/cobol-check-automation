@@ -13,7 +13,7 @@ if cobolcheck_exists != true; then
 
     echo "uploading cobolcheck"
 
-    zowe zos-files upload dir-to-uss "./cobol-check" "/z/$LOWERCASE_USERNAME/cobolcheck" --recursive --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD
+    zowe zos-files upload dir-to-uss "./cobol-check" "/z/$LOWERCASE_USERNAME/cobolcheck" --recursive --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD \
     --binary-files "cobol-check-0.2.16.jar"  
 else
     echo "cobolcheck directory already exists..."
