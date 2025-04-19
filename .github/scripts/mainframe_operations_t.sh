@@ -2,4 +2,6 @@
 
 java -version
 
-echo "in t"
+ZOWE_USERNAME = $ZOWE_USERNAME
+
+echo "in t for $ZOWE_USERNAME"
