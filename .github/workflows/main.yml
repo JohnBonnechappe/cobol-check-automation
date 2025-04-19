@@ -1,4 +1,4 @@
-name: COBOL Check Automation V1.4
+name: COBOL Check Automation V1.5
 
 run-name: ${{github.actor}} has triggered ${{github.workflow}}
 
@@ -42,25 +42,23 @@ jobs:
 #    - name: check_zowe_config
 #      run: zowe config list
 
-    - name: setup_lowercase
+    - name: setup_lowercase username
       run: |
         LOWERCASE_USERNAME=$(echo "$ZOWE_USERNAME" | tr '[:upper:]' '[:lower:]')
         echo "lowercase un=$LOWERCASE_USERNAME"
         echo "LOWERCASE_USERNAME=$LOWERCASE_USERNAME" >> $GITHUB_ENV
 
-    - name: Check USS files
+    - name: Check if USS files exist
       run: |
         rtn_sts=false
         zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD && rtn_sts=true
         echo "return=$rtn_sts"
         echo "cobolcheck_exists=$rtn_sts" >> $GITHUB_ENV
     
-    - name: Setup Mainframe Environment and Upload COBOL Check
+    - name: Setup Mainframe USS Environment and Upload COBOL Check
       if: env.cobolcheck_exists != true
       run: |
-       # Here we'll add our commands to setup cobolcheck
-       
-         chmod +x .github/scripts/zowe_operations_t.sh
+        chmod +x .github/scripts/zowe_operations_t.sh
         .github/scripts/zowe_operations_t.sh
         # Add actual cobolcheck commands here
         
