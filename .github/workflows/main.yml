@@ -58,7 +58,7 @@ jobs:
         # Here we'll add our commands to setup cobolcheck
         chmod +x .github/scripts/zowe_operations_t.sh
         ls -l .github/scripts/
-        zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD
+#        zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD
 #        .github/scripts/zowe_operations_t.sh
         # Add actual cobolcheck commands here
         
