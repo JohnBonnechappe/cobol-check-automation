@@ -24,6 +24,7 @@
           03 emp-pay-month      PIC  9(7)V99.
 
        PROCEDURE DIVISION.
+         main.
            DISPLAY "In EMPPAY Version 1.0"
 
            PERFORM initialization
