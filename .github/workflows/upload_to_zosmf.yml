@@ -70,9 +70,11 @@ jobs:
       run: |
         rtn_sts=false
         pwd
+        cd src
+        pwd
         file_nm=${{github.event.inputs.pgm_name}}".CBL"
         member_nm=$VAR_CBL_PDS"("${{github.event.inputs.pgm_name}}")"
-        zowe zos-files upload file-to-data-set  "$filenm" $member_nm --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD && rtn_sts=true
+        zowe zos-files upload file-to-data-set  "$file_nm" $member_nm --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD && rtn_sts=true
         echo "return=$rtn_sts"
 
     - name: Done
