@@ -69,13 +69,13 @@ jobs:
     - name: Upload the CBL
       run: |
         rtn_sts=false
-        echo "dir=$(pwd)"
-        cd src
+        echo "dir=$(pwd)"                                   
         echo "dir=$(pwd)"
         file_nm=${{github.event.inputs.pgm_name}}".CBL"
         member_nm=$VAR_CBL_PDS"("${{github.event.inputs.pgm_name}}")"
         echo "file=$file_nm"
         echo "member=$member_nm"
+        zowe zos-files list am $VAR_JCL_PDS --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD && rtn_sts=true
         zowe zos-files upload file-to-data-set  "$file_nm" $member_nm --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD && rtn_sts=true
         echo "return=$rtn_sts"
 
