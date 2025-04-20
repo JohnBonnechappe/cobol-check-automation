@@ -18,6 +18,7 @@ echo "made cobolcheck exe."
 cd scripts
 chmod +x linux_gnucobol_run_tests
 echo "made linux_gnucobol exe."
+
 cd ..
 
 run_cobolcheck() {
