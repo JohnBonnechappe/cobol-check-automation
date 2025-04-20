@@ -1,5 +1,5 @@
        IDENTIFICATION DIVISION.
-      *MM
+      *M
       *Summary
       *
        PROGRAM-ID deptpay.
