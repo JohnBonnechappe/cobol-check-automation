@@ -30,7 +30,7 @@ jobs:
     timeout-minutes: 5
     runs-on: ubuntu-latest
     env:
-        ZOWE_CLI_HOME: ".github/.zowe"
+        ZOWE_CLI_HOME: "github/.zowe"
         ZOWE_USERNAME: ${{ secrets.ZOWE_USERNAME }}
         ZOWE_PASSWORD: ${{ secrets.ZOWE_PASSWORD }}
 
@@ -72,6 +72,16 @@ jobs:
         echo "$(ls -la)"
         file_nm=${{github.event.inputs.pgm_name}}".CBL"
         member_nm=$VAR_CBL_PDS"("${{github.event.inputs.pgm_name}}")"
+        echo "file=$file_nm"
+        echo "member=$member_nm"
+        rtn_sts=false
+        zowe zos-files upload file-to-data-set  "$file_nm" $member_nm --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD && rtn_sts=true
+        echo "return=$rtn_sts"
+
+    - name: Upload the JCL
+      run: |                                  
+        file_nm=${{github.event.inputs.pgm_name}}".JCL"
+        member_nm=$VAR_JCL_PDS"("${{github.event.inputs.pgm_name}}")"
         echo "file=$file_nm"
         echo "member=$member_nm"
         rtn_sts=false
