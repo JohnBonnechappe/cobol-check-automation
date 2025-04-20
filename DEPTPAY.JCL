@@ -1,4 +1,3 @@
-
 //DEPTPAYJ JOB 1,NOTIFY=&SYSUID,TIME=(1,0)
 //COPY2DS1 EXEC PGM=IKJEFT01
 //INUNIX DD PATHOPTS=(ORDONLY),
@@ -21,6 +20,6 @@
 //CEEDUMP  DD DUMMY
 //SYSUDUMP DD DUMMY
 //*********************************************************
-//ELSE
-//ENDIF
-//
+// ELSE
+// ENDIF
+//*
