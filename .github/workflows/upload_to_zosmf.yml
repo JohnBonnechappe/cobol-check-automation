@@ -1,19 +1,32 @@
 name: Upload and compile a COBOL pgm on Z/OS V1.5
 #
-# upload a JCL or CBL file to a PDS on Z/OS mainframe
+# for a program specified on input:
+# upload a JCL and CBL file to PDS datasets on Z/OS mainframe
 # then run the JCL to compile the program
 #
 run-name: ${{github.actor}} has triggered ${{github.workflow}}
 
 on:
-  push:
-    branches: [ main ]
-    paths: ['**.CBL' , '**.JCL']
+#  push:
+#    branches: [ main ]
+#    paths: ['**.CBL' , '**.JCL']
     
   workflow_dispatch:
+   inputs:
+       pgm_name:
+              description: 'Program name?'
+              type: string
+              required: true
+
+  repository_dispatch:
+   inputs:
+          pgm_name:
+              description: 'Program name?'
+              type: string
+              required: true
 
 jobs:
-  cobol-check:
+  cobol-compile:
     timeout-minutes: 5
     runs-on: ubuntu-latest
     env:
@@ -28,39 +41,26 @@ jobs:
     - name: init
       run: |
         echo "Running upload and compile Cobol"
+        echo "Param=${{ github.event.inputs.pgm_name }}"
         echo "home=$ZOWE_CLI_HOME"
       
     - name: Install ZOWE CLI
       run: npm install -g @zowe/cli@latest
-
-    - name: setup_lowercase username
+      
+    - name: build_params
+      env:
+        ZOWE_DOT:      "."
+        ZOWE_CBL_PDS:  "CBL"
       run: |
-        LOWERCASE_USERNAME=$(echo "$ZOWE_USERNAME" | tr '[:upper:]' '[:lower:]')
-        echo "lowercase un=$LOWERCASE_USERNAME"
-        echo "LOWERCASE_USERNAME=$LOWERCASE_USERNAME" >> $GITHUB_ENV
+        echo "VAR_CBL_PDS=$ZOWE_USERNAME$ZOWE_DOT$ZOWE_CBL_PDS" >> $GITHUB_ENV
 
-    - name: Check if USS files exist
+    - name: Upload the CBL
       run: |
         rtn_sts=false
-        zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD && rtn_sts=true
+        zowe zos-files list am $VAR_CBL_PDS --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD && rtn_sts=true
         echo "return=$rtn_sts"
-        echo "cobolcheck_exists=$rtn_sts" >> $GITHUB_ENV
+        echo "zowe_sts=$rtn_sts" >> $GITHUB_ENV
     
-    - name: Setup Mainframe USS Environment and Upload COBOL Check
-      if: env.cobolcheck_exists != true
-      run: |
-        chmod +x .github/scripts/zowe_operations_t.sh
-        .github/scripts/zowe_operations_t.sh
-        # Add actual cobolcheck commands here
-        
-    - name: Run COBOL Check on Mainframe
-      # Here we'll add our commands to setup cobolcheck
-      #  sshpass -p "$ZOWE-PASSWORD" ssh -o "StrictHostKeyChecking"=no $ZOWE_USERNAME@204.90.115.200 'sh -s' < .github/scripts/mainframe_operations.sh
-      run: |
-        echo "---> mainframe ops"
-        chmod +x .github/scripts/mainframe_operations_t.sh
-        .github/scripts/mainframe_operations_t.sh
-      # Add actual cobolcheck commands here
 
     - name: Done
       run: echo "Done"
