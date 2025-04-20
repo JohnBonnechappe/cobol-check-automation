@@ -69,7 +69,8 @@ jobs:
     - name: Upload the CBL
       run: |
         rtn_sts=false
-        zowe zos-files upload file-to-data-set  "${{github.event.inputs.pds_name}}'.CBL'" $VAR_CBL_PDS(${{github.event.inputs.pgm_name}}) --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD && rtn_sts=true
+        pwd
+        zowe zos-files upload file-to-data-set  "${{github.event.inputs.pgm_name}}'.CBL'" $VAR_CBL_PDS(${{github.event.inputs.pgm_name}}) --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD && rtn_sts=true
         echo "return=$rtn_sts"
 
     - name: Done
