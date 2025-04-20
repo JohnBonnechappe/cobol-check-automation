@@ -15,8 +15,8 @@
               03 dept-name         PIC X(20).
               03 dept-loc          PIC X(12).
               03  dept-manager.
-                     05  manager_fname       PIC X(15).
-                     05  manager_lname       PIC X(15).
+                     05  manager-fname       PIC X(15).
+                     05  manager-lname       PIC X(15).
               03  dept-nbr-emps              PIC 9(3).
               03  dept-total-salaries        PIC 9(7)V99.
               03  dept-avg-salary            PIC 9(7)V99.
@@ -31,7 +31,7 @@
             STOP RUN
             .
       
-        initialization.
+         initialization.
             MOVE ZERO to exit_sts
             .
 
@@ -52,5 +52,5 @@
               DISPLAY "Dept Locn: " dept-loc
               DISPLAY "Manager  : " manager-fname
             .
-       *---------EOP-------
+      *---------EOP-------
    
