@@ -11,7 +11,7 @@
 //COBOL.SYSIN  DD DSN=&SYSUID..CBL(DEPTPAY),DISP=SHR
 //LKED.SYSLMOD DD DSN=&SYSUID..LOAD(DEPTPAY),DISP=SHR
 //********************************************************
-//IF RC = 0 THEN
+// IF RC = 0 THEN
 //********************************************************
 //RUN    EXEC PGM=DEPTPAY
 //STEPLIB  DD DSN=&SYSUID..LOAD,DISP=SHR
