@@ -51,8 +51,20 @@ jobs:
       env:
         ZOWE_DOT:      "."
         ZOWE_CBL_PDS:  "CBL"
+        ZOWE_JCL_PDS:  "JCL"
       run: |
         echo "VAR_CBL_PDS=$ZOWE_USERNAME$ZOWE_DOT$ZOWE_CBL_PDS" >> $GITHUB_ENV
+        echo "VAR_JCL_PDS=$ZOWE_USERNAME$ZOWE_DOT$ZOWE_JCL_PDS" >> $GITHUB_ENV
+
+    - name: List the CBL & JCL
+      run: |
+        rtn_sts=false
+        zowe zos-files list am $VAR_CBL_PDS --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD && rtn_sts=true
+        echo "zowe return=$rtn_sts"
+        
+        rtn_sts=false
+        zowe zos-files list am $VAR_JCL_PDS --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD && rtn_sts=true
+        echo "zowe return=$rtn_sts"
 
     - name: Upload the CBL
       run: |
@@ -60,7 +72,6 @@ jobs:
         zowe zos-files list am $VAR_CBL_PDS --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD && rtn_sts=true
         echo "return=$rtn_sts"
         echo "zowe_sts=$rtn_sts" >> $GITHUB_ENV
-    
 
     - name: Done
       run: echo "Done"
