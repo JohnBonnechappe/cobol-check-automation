@@ -30,7 +30,7 @@ jobs:
     timeout-minutes: 5
     runs-on: ubuntu-latest
     env:
-        ZOWE_CLI_HOME: "github/.zowe"
+        ZOWE_CLI_HOME: ".github/.zowe"
         ZOWE_USERNAME: ${{ secrets.ZOWE_USERNAME }}
         ZOWE_PASSWORD: ${{ secrets.ZOWE_PASSWORD }}
 
