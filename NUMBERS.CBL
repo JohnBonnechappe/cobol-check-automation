@@ -3,8 +3,10 @@
        AUTHOR. John Braddock.
       
        ENVIRONMENT DIVISION.
+       INPUT-OUTPUT SECTION.
       
        DATA DIVISION.
+       FILE SECTION.
        WORKING-STORAGE SECTION.
           01  exit_sts             PIC 99.
        PROCEDURE DIVISION.
