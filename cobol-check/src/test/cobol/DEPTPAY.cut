@@ -4,6 +4,6 @@ TestSuite "Calculation of average Salary"
   PERFORM average-salary
   EXPECT dept-nbr-emps TO BE 19
 
-  TEstCase 'TOTAL AVERAGE SALARY TO BE 123.456'
+  TestCase 'TOTAL AVERAGE SALARY TO BE 123.456'
   PERFORM average-salary
   EXPECT dept-total-salaries TO BE 123.456
