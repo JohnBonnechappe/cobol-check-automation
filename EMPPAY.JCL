@@ -5,7 +5,7 @@
 //COBOL.SYSIN  DD DSN=&SYSUID..CBL(EMPPAY),DISP=SHR
 //LKED.SYSLMOD DD DSN=&SYSUID..LOAD(EMPPAY),DISP=SHR
 //********************************************************
-//IF RC = 0 THEN
+// IF RC = 0 THEN
 //********************************************************
 //RUN    EXEC PGM=EMPPAY
 //STEPLIB  DD DSN=&SYSUID..LOAD,DISP=SHR
@@ -15,6 +15,6 @@
 //CEEDUMP  DD DUMMY
 //SYSUDUMP DD DUMMY
 //*********************************************************
-//ELSE
-//ENDIF
+// ELSE
+// ENDIF
 //
