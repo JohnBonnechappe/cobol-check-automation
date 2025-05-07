@@ -23,16 +23,17 @@ cd ..
 
 run_cobolcheck() {
   program=$1
-  echo "Running cobolcheck for $program"
+  echo "****************************************"
+  echo "******** Running cobolcheck for $program"
 
   ./cobolcheck -p $program
-  echo "completed for $program"
+  echo "******** cobolcheck completed for $program"
 
   if [ -f "CC##99.CBL" ]; then
       if cp CC##99.CBL "//'{$ZOWE_USERNAME}.CBL($program)'"; then
-          echo "copied"
+          echo "copied $program"
       else
-          echo "failed to copy"
+          echo "failed to copy $program"
       fi
   else
       echo "CC##99 not found for $program"
@@ -54,4 +55,4 @@ for program in NUMBERS EMPPAY DEPTPAY ; do
     run_cobolcheck $program
 done
 
-echo "mainframe ops complete"
+echo "******** mainframe ops complete"
