@@ -37,7 +37,7 @@ jobs:
         cd $GITHUB_WORKSPACE
         ls -la
         echo "-----DT---"
-        cd $GITHUB_WORKSPACE/.github/.zowe
+        cd $ZOWE_CLI_HOME
         ls -la
         echo "-----DT2---"
         echo "------doing pwd zoew"
