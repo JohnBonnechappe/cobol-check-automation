@@ -37,6 +37,9 @@ jobs:
         cd $GITHUB_WORKSPACE
         ls -la
         echo "-----DT---"
+        cd $GITHUB_WORKSPACE/.github
+        ls -la
+        echo "-----DT2---"
         
 #    - name: Set up Java
 #      uses: actions/setup-java@v2 
