@@ -49,6 +49,10 @@ run_cobolcheck() {
   fi
 
 #copy the jcl
+  echo "Copying the JCL"
+  echo $(pwd)
+  echo "proceeding but check first"
+  ls -la
   if [ -f "${program}.JCL" ]; then
       zowe_sts=false
       zowe zos-files upload file-to-data-set "$program.JCL" "$LOWERCASE_USERNAME.JCL($program)" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD && zowe_sts=true
