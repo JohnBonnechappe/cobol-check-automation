@@ -40,9 +40,6 @@ jobs:
         cd $ZOWE_CLI_HOME
         ls -la
         echo "-----DT2---"
-        echo "------doing pwd zoew"
-        echo $(pwd)
-        echo "----done pwd---"
         ls -la `$ZOWE_CLI_HOME`
         echo "-----DT3---"
         cd /home/runner/work/cobol-check-automation/cobol-check-automation/.github/.zowe
@@ -87,7 +84,7 @@ jobs:
       run: |
         echo "---> mainframe ops"
         chmod +x .github/scripts/mainframe_operations_t.sh
-        .github/scripts/mainframe_operations_t.sh
+        .github/scripts/mainframe_operations.sh
 
     - name: Done
       run: echo "Done"
