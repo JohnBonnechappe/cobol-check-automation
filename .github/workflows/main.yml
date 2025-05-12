@@ -40,6 +40,9 @@ jobs:
         cd $GITHUB_WORKSPACE/.github/.zowe
         ls -la
         echo "-----DT2---"
+        echo "------doing pwd zoew"
+        echo($pwd)
+        echo "----done pwd---"
         ls -la `$ZOWE_CLI_HOME`
         echo "-----DT3---"
         
