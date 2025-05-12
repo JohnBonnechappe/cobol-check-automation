@@ -3,10 +3,12 @@
 java -version
 
 ZOWE_USERNAME = $ZOWE_USERNAME
+ZOWE_PASSOWRD = $ZOWE_PASSWORD
 
 echo "in mf_t"
 echo "for un=$ZOWE_USERNAME"
 echo "for lower_un=$LOWERCASE_USERNAME"
+echo "for pw=$ZOWE_PASSOWRD"
 
 cd cobol-check
 echo "Changed to $(pwd)"
