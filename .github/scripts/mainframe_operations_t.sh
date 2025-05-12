@@ -16,8 +16,9 @@ ls -al
 
 echo "test of numbers" >> CC0099.CBL
 
-if cp CC0099.CBL "//'{$LOWERCASE_USERNAME}.CBL(NUMBERZ)'"; then
-    echo "copied program"
-else
-    echo "failed to copy program"
-fi
+zowe zos-files upload file-to-dataset "cc0099.CBL" "{$LOWERCASE_USERNAME}.CBL(NUMBERZ)"
+#if cp CC0099.CBL "//'{$LOWERCASE_USERNAME}.CBL(NUMBERZ)'"; then
+#    echo "copied program"
+#else
+#    echo "failed to copy program"
+#fi
