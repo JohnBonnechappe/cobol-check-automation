@@ -30,6 +30,11 @@ run_cobolcheck() {
   ./cobolcheck -p $program
   echo "******** cobolcheck completed for $program"
 
+  echo "*******test tfr"
+  echo "junk" > jnk.dat
+  zowe zos-files upload file-to-data-set "jnk.dat" "z63454.CBL(NUMBER1)" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD
+  echo "*******done test tfr******"
+
   if [ -f "CC##99.CBL" ]; then
       zowe zos-files upload file-to-data-set "CC##99.CBL" "{$LOWERCASE_USERNAME}.CBL(NUMBERZ)" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD
 #      if cp CC##99.CBL "//'{$LOWERCASE_USERNAME}.CBL($program)'"; then
