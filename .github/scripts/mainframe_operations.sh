@@ -32,7 +32,6 @@ run_cobolcheck() {
 
   echo "*******test tfr"
   echo "junk" > jnk.dat
-  zowe zos-files upload file-to-data-set "jnk.dat" "z63454.CBL(NUMBER1)" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD
   zowe zos-files upload file-to-data-set "jnk.dat" "$LOWERCASE_USERNAME.CBL(NUMBER2)" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD
   echo "*******done test tfr******"
 
