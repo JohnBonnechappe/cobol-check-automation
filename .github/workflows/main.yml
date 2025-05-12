@@ -1,4 +1,4 @@
-name: COBOL Check Automation V1.5
+name: COBOL Check Automation V1.6
 
 run-name: ${{github.actor}} has triggered ${{github.workflow}}
 
@@ -33,7 +33,7 @@ jobs:
     - name: init
       run: |
         echo "Running Cobol Check Workflow"
-        echo "home=$ZOWE_CLI_HOME"
+        echo "Zowe home=$ZOWE_CLI_HOME"
         
 #    - name: Set up Java
 #      uses: actions/setup-java@v2 
