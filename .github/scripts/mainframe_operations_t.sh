@@ -18,6 +18,11 @@ cd cobol-check
 echo "Changed to $(pwd)"
 ls -al
 
+echo "Verifying upload again"
+zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD
+echo "Done zowe_operations again"
+
+
 echo "test of numbers" >> CC0099.CBL
 
 zowe zos-files upload file-to-data-set "CC0099.CBL" "{$LOWERCASE_USERNAME}.CBL(NUMBERZ)" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD
