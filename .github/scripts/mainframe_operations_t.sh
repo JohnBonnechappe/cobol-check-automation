@@ -3,7 +3,7 @@
 java -version
 
 ZOWE_USERNAME = $ZOWE_USERNAME
-ZOWE_PASSOWRD = "VZR08RVP"
+ZOWE_PASSOWRD = $ZOWE_PASSWORD
 
 echo "in mf_t"
 echo "for un=$ZOWE_USERNAME"
