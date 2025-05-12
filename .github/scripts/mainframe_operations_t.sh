@@ -10,6 +10,10 @@ echo "for un=$ZOWE_USERNAME"
 echo "for lower_un=$LOWERCASE_USERNAME"
 echo "for pw=$ZOWE_PASSWORD"
 
+echo "Verifying upload"
+zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD
+echo "Done zowe_operations"
+
 cd cobol-check
 echo "Changed to $(pwd)"
 ls -al
