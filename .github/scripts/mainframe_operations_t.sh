@@ -8,7 +8,7 @@ ZOWE_PASSWORD = $ZOWE_PASSWORD
 echo "in mf_t"
 echo "for un=$ZOWE_USERNAME"
 echo "for lower_un=$LOWERCASE_USERNAME"
-echo "for pw=$ZOWE_PASSOWRD"
+echo "for pw=$ZOWE_PASSWORD"
 
 cd cobol-check
 echo "Changed to $(pwd)"
