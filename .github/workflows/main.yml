@@ -22,7 +22,7 @@ jobs:
     timeout-minutes: 2
     runs-on: ubuntu-latest
     env:
-        ZOWE_CLI_HOME: "`$GITHUB_WORKSPACE`/.github/.zowe"
+        ZOWE_CLI_HOME: "/home/runner/work/cobol-check-automation/cobol-check-automation/.github/.zowe"
         ZOWE_USERNAME: ${{ secrets.ZOWE_USERNAME }}
         ZOWE_PASSWORD: ${{ secrets.ZOWE_PASSWORD }}
 
