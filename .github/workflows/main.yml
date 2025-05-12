@@ -45,7 +45,9 @@ jobs:
         echo "----done pwd---"
         ls -la `$ZOWE_CLI_HOME`
         echo "-----DT3---"
-        
+        cd /home/runner/work/cobol-check/cobol-check/.github/.zowe
+        ls -la
+        echo "---------done runner-----"
 #    - name: Set up Java
 #      uses: actions/setup-java@v2 
 #      with:
