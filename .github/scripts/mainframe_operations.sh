@@ -37,9 +37,9 @@ run_cobolcheck() {
 
   if [ -f "CC##99.CBL" ]; then
       zowe_sts=false
-      zowe zos-files upload file-to-data-set "CC##99.CBL" "$LOWERCASE_USERNAME.CBL($program)" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD && zowe_sts
+      zowe zos-files upload file-to-data-set "CC##99.CBL" "$LOWERCASE_USERNAME.CBL($program)" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD && $zowe_sts
       echo "Zowe status after copy=$zowe_sts"
-      if zowe_sts; then
+      if $zowe_sts; then
           echo "copied $program"
       else
           echo "failed to copy $program"
