@@ -37,7 +37,7 @@ run_cobolcheck() {
 
   if [ -f "CC##99.CBL" ]; then
       zowe_sts=false
-      zowe zos-files upload file-to-data-set "CC##99.CBL" "$LOWERCASE_USERNAME.CBL($program)" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD && $zowe_sts
+      zowe zos-files upload file-to-data-set "CC##99.CBL" "$LOWERCASE_USERNAME.CBL($program)" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD && zowe_sts=true
       echo "Zowe status after copy=$zowe_sts"
       if $zowe_sts; then
           echo "copied $program"
@@ -51,14 +51,14 @@ run_cobolcheck() {
 #copy the jcl
   if [ -f "${program}.JCL" ]; then
       zowe_sts=false
-      zowe zos-files upload file-to-data-set "$program.JCL" "$LOWERCASE_USERNAME.JCL($program)" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD && zowe_sts
-      if zowe_sts; then
+      zowe zos-files upload file-to-data-set "$program.JCL" "$LOWERCASE_USERNAME.JCL($program)" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD && zowe_sts=true
+      if $zowe_sts; then
           echo "copied JCL"
       else
           echo "failed to copy JCL"
       fi
   else
-      echo "${program}.jcl not found"
+      echo "${program}.JCL not found"
   fi
 }
 
