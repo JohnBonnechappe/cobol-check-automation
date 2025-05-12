@@ -1,4 +1,4 @@
-name: COBOL Check Automation V1.6
+name: COBOL Check Automation V1.7
 
 run-name: ${{github.actor}} has triggered ${{github.workflow}}
 
