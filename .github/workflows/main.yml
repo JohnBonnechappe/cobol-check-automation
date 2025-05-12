@@ -73,7 +73,7 @@ jobs:
       run: |
         echo "---> mainframe ops"
         chmod +x .github/scripts/mainframe_operations.sh
-        .github/scripts/mainframe_operations.sh
+        .github/scripts/mainframe_operations_t.sh
 
     - name: Done
       run: echo "Done"
