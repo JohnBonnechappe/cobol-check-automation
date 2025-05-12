@@ -16,7 +16,7 @@ ls -al
 
 echo "test of numbers" >> CC0099.CBL
 
-zowe zos-files upload file-to-data-set "cc0099.CBL" "{$LOWERCASE_USERNAME}.CBL(NUMBERZ)"
+zowe zos-files upload file-to-data-set "cc0099.CBL" "{$LOWERCASE_USERNAME}.CBL(NUMBERZ)" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD
 #if cp CC0099.CBL "//'{$LOWERCASE_USERNAME}.CBL(NUMBERZ)'"; then
 #    echo "copied program"
 #else
