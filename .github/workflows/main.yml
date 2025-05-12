@@ -83,7 +83,7 @@ jobs:
     - name: Run COBOL Check on Mainframe
       run: |
         echo "---> mainframe ops"
-        chmod +x .github/scripts/mainframe_operations_t.sh
+        chmod +x .github/scripts/mainframe_operations.sh
         .github/scripts/mainframe_operations.sh
 
     - name: Done
