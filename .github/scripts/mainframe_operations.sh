@@ -36,12 +36,13 @@ run_cobolcheck() {
   echo "*******done test tfr******"
 
   if [ -f "CC##99.CBL" ]; then
-      zowe zos-files upload file-to-data-set "CC##99.CBL" "$LOWERCASE_USERNAME.CBL(NUMBERZ)" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD
-#      if cp CC##99.CBL "//'{$LOWERCASE_USERNAME}.CBL($program)'"; then
-#          echo "copied $program"
-#      else
-#          echo "failed to copy $program"
-#      fi
+      zowe_sts=false
+      zowe zos-files upload file-to-data-set "CC##99.CBL" "$LOWERCASE_USERNAME.CBL(NUMBERZ)" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD && zowe_sts
+      if zowe_sts; then
+          echo "copied $program"
+      else
+          echo "failed to copy $program"
+      fi
   else
       echo "CC##99 not found for $program"
   fi
