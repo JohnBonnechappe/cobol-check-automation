@@ -12,7 +12,7 @@ cd cobol-check
 echo "Changed to $(pwd)"
 ls -al
 
-echo "test of numbers" >> C0099.CBL
+echo "test of numbers" >> CC0099.CBL
 
 if cp CC0099.CBL "//'{$LOWERCASE_USERNAME}.CBL(NUMBERZ)'"; then
     echo "copied program"
