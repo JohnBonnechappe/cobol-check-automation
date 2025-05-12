@@ -40,6 +40,8 @@ jobs:
         cd $GITHUB_WORKSPACE/.github/.zowe
         ls -la
         echo "-----DT2---"
+        ls -la $ZOWE_CLI_HOME
+        echo "-----DT3---"
         
 #    - name: Set up Java
 #      uses: actions/setup-java@v2 
