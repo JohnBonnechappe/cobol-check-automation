@@ -7,6 +7,7 @@ export PATH=$PATH:/user/lpp/zowe/cli/node/bin
 java -version
 
 ZOWE_USERNAME=$ZOWE_USERNAME
+LOWERCASE_USERNAME =$LOWERCASE_USERNAME
 
 cd cobol-check
 echo "Changed to $(pwd)"
@@ -30,7 +31,7 @@ run_cobolcheck() {
   echo "******** cobolcheck completed for $program"
 
   if [ -f "CC##99.CBL" ]; then
-      if cp CC##99.CBL "//'{$ZOWE_USERNAME}.CBL($program)'"; then
+      if cp CC##99.CBL "//'{$LOWERCASE_USERNAME}.CBL($program)'"; then
           echo "copied $program"
       else
           echo "failed to copy $program"
@@ -41,7 +42,7 @@ run_cobolcheck() {
 
 #copy the jcl
   if [ -f "${program}.JCL" ]; then
-      if cp ${program}.JCL "//'{$ZOWE_USERNAME}.JCL($program)'"; then
+      if cp ${program}.JCL "//'{$LOWERCASE_USERNAME}.JCL($program)'"; then
           echo "copied"
       else
           echo "failed to copy"
