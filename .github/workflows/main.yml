@@ -19,7 +19,7 @@ on:
               default: 'Y'
 jobs:
   cobol-check:
-    timeout-minutes: 3
+    timeout-minutes: 2
     runs-on: ubuntu-latest
     env:
         ZOWE_CLI_HOME: "$GITHUB_WORKSPACE/.github/.zowe"
@@ -37,7 +37,7 @@ jobs:
         cd $GITHUB_WORKSPACE
         ls -la
         echo "-----DT---"
-        cd $GITHUB_WORKSPACE/.github
+        cd $GITHUB_WORKSPACE/.github/.zowe
         ls -la
         echo "-----DT2---"
         
