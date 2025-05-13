@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
       inputs:
           run_zowe:
-              description: 'Run ZOWE?'
+              description: 'Run ZOWE(ignore for now)?'
               type: choice
               options:
                     - 'Y'
