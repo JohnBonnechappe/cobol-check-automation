@@ -16,12 +16,12 @@
            03 emp-name.
                05 emp-fname       PIC  X(15).
                05 emp-lname       PIC  X(15).
-           03 emp-hourly-rate    PIC  9(3)V99.
-           03 emp-ot-rate        PIC  V99.   
-           03 emp-reward         PIC  V99.
-           03 emp-hours          PIC  9(3).
-           03 emp-pay-week       PIC  9(7)V99.
-           03 emp-pay-month      PIC  9(7)V99.
+           03 emp-hourly-rate     PIC  9(3)V99.
+           03 emp-ot-rate         PIC  V99.   
+           03 emp-reward          PIC  V99.
+           03 emp-hours           PIC  9(3).
+           03 emp-pay-week        PIC  9(7)V99.
+           03 emp-pay-month       PIC  9(7)V99.
 
        PROCEDURE DIVISION.
          main.
