@@ -18,7 +18,7 @@
               03  ws-display-field PIC S9(5)V99.
               03  ws-num-occ       PIC 9(04) OCCURS 10.
 
-          77 char-ct               PIC S(3) COMP.
+          77 char-ct               PIC S9(3) COMP.
 
        PROCEDURE DIVISION.
          main.
