@@ -35,7 +35,7 @@ run_cobolcheck() {
   ./cobolcheck -p $program
   echo "******** cobolcheck completed for $program"
 
-#  echo "*******test tfr"
+#  echo "*******test tfr*********"
 #  echo "junk" > jnk.dat
 #  zowe zos-files upload file-to-data-set "jnk.dat" "$LOWERCASE_USERNAME.CBL(NUMBER2)" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD
 #  echo "*******done test tfr******"
@@ -59,7 +59,7 @@ run_cobolcheck() {
   echo $(pwd)
   echo "proceeding but check first"
   ls -la
-  cd /home/runner/work/cobol-check-automation/cobol-check-automation/cobol-check/src/main/cobol
+  cd $GITHUB_WORKSPACE/cobol-check/src/main/cobol
   if [ -f "${program}.JCL" ]; then
       zowe_sts=false
       zowe zos-files upload file-to-data-set "$program.JCL" "$LOWERCASE_USERNAME.JCL($program)" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD && zowe_sts=true
