@@ -72,6 +72,16 @@ run_cobolcheck() {
   else
       echo "${program}.JCL not found"
   fi
+
+  echo "submitting job for $program"
+  zowe_sts=false
+  zowe zos-jobs submit data-set "$LOWERCASE_USERNAME.JCL($program)" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD $$ zowe-sts = true
+  if $zowe_sts; then
+      echo "successfully submitted job for $program"
+  else
+      echo "failed to submit job for $program"
+  fi
+
 }
 
 for program in NUMBERS EMPPAY DEPTPAY ; do
