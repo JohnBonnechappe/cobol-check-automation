@@ -5,7 +5,7 @@
 #LOWERCASE_USERNAME=$(echo "$ZOWE_USERNAME" | tr '[:upper:]' '[:lower:]')
 
 echo "checking for USS files"
-zowe_sts = false
+zowe_sts=false
 zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD && $zowe_sts=true
 
 if $zowe_sts = false; then
