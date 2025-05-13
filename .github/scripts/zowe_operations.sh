@@ -2,7 +2,7 @@
 
 #zowe_operations.sh
 
-#LOWERCASE_USERNAME=$(echo "ZOWE_USERNAME" | tr '[:upper:]' '[:lower:]')
+#LOWERCASE_USERNAME=$(echo "$ZOWE_USERNAME" | tr '[:upper:]' '[:lower:]')
 
 cobolcheck_exists = false
 zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD && cobolcheck_exists=true
