@@ -8,7 +8,7 @@ echo "checking for USS files"
 zowe_sts=false
 zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD && $zowe_sts=true
 
-if $zowe_sts = false; then
+if $zowe_sts=false; then
     echo "cobolcheck directory does not exist. creating it..."
     zowe zos-files create uss-directory /z/$LOWERCASE_USERNAME/cobolcheck --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD
 
