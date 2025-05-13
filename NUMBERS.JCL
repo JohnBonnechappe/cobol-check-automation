@@ -9,7 +9,7 @@
 //********************************************************
 // IF RC = 0 THEN
 //********************************************************
-//RUN    EXEC PGM=NUMBERS
+//RUN      EXEC PGM=NUMBERS
 //STEPLIB  DD DSN=&SYSUID..LOAD,DISP=SHR
 //ACCTREC  DD DSN=&SYSUID..DATA,DISP=SHR
 //PRTLINE  DD SYSOUT=*,OUTLIM=15000
