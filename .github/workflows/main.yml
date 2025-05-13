@@ -34,9 +34,10 @@ jobs:
       run: |
         echo "Running Cobol Check Workflow"
         echo "Zowe home=$ZOWE_CLI_HOME"
+        echo "----------check runner-----"
         cd $GITHUB_WORKSPACE
         ls -la
-        echo "-----DT---"
+        echo "-----DT1---"
         cd $ZOWE_CLI_HOME
         ls -la
         echo "-----DT2---"
