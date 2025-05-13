@@ -21,4 +21,4 @@ fi
 
 echo "Verifying upload"
 zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD
-echo "Done"
+echo "Done zowe_operations"
