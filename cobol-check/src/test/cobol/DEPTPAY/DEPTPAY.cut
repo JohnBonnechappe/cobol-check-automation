@@ -1,6 +1,6 @@
 TestSuite "Calculation of average Salary"
   
-  TestCase 'NUMBER OF PERSON TO BE 19
+  TestCase 'NUMBER OF PERSON TO BE 19'
   PERFORM average-salary
   EXPECT dept-nbr-emps TO BE 19
 
