@@ -20,9 +20,14 @@ cd scripts
 chmod +x linux_gnucobol_run_tests
 echo "made linux_gnucobol exe."
 
-cd /home/runner/work/cobol-check-automation/cobol-check-automation/cobol-check
-
 run_cobolcheck() {
+  echo "chk1"
+  cd /home/runner/work/cobol-check-automation/cobol-check-automation/cobol-check
+  ls -la
+  echo "chk2"
+  cd $GITHUB_WORKSPACE/cobol-check
+  ls -la
+  echo "chk go"
   program=$1
   echo "****************************************"
   echo "******** Running cobolcheck for $program"
