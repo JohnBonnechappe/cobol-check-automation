@@ -20,7 +20,7 @@ cd scripts
 chmod +x linux_gnucobol_run_tests
 echo "made linux_gnucobol exe."
 
-cd ..
+cd /home/runner/work/cobol-check-automation/cobol-check-automation/cobol-check
 
 run_cobolcheck() {
   program=$1
@@ -47,12 +47,14 @@ run_cobolcheck() {
   else
       echo "CC##99 not found for $program"
   fi
+  echo "*********************************************"
 
 #copy the jcl
   echo "Copying the JCL"
   echo $(pwd)
   echo "proceeding but check first"
   ls -la
+  cd /home/runner/work/cobol-check-automation/cobol-check-automation/cobol-check/src/main/cobol
   if [ -f "${program}.JCL" ]; then
       zowe_sts=false
       zowe zos-files upload file-to-data-set "$program.JCL" "$LOWERCASE_USERNAME.JCL($program)" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD && zowe_sts=true
