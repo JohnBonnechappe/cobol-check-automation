@@ -75,7 +75,7 @@ run_cobolcheck() {
 
   echo "submitting job for $program"
   zowe_sts=false
-  zowe zos-jobs submit data-set "$LOWERCASE_USERNAME.JCL($program)" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD && zowe-sts = true
+  zowe zos-jobs submit data-set "$LOWERCASE_USERNAME.JCL($program)" --u $ZOWE_USERNAME --pw $ZOWE_PASSWORD && zowe_sts = true
   if $zowe_sts; then
       echo "successfully submitted job for $program"
   else
