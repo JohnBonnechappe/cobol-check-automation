@@ -1,1 +1,5 @@
+TetSuite 'Checks the employee payment'
 
+TestCase 'checks the EMP-OT-RATE to be 0.25'
+MOVE 50 TO EMP-HOURS
+MOVE 23
