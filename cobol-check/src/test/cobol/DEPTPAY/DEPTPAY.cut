@@ -7,3 +7,7 @@ TestSuite "Calculation of average Salary"
   TestCase 'TOTAL AVERAGE SALARY TO BE 123.456'
   PERFORM average-salary
   EXPECT dept-total-salaries TO BE 123.456
+
+  TestCase 'average salary will be greater than 5840'
+  PERFORM average-salary
+  EXPECT dept-avg-salary >= 5840
