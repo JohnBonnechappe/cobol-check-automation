@@ -40,9 +40,11 @@ jobs:
         cd $ZOWE_CLI_HOME
         ls -la
         echo "-----DT2---"
-        ls -la `$ZOWE_CLI_HOME`
-        echo "-----DT3---"
         cd /home/runner/work/cobol-check-automation/cobol-check-automation/.github/.zowe
+        echo $(pwd)
+        ls -la
+        echo "-----DT3---"
+        cd $GITHUB_WORKSPACE/.github/.zowe
         echo $(pwd)
         ls -la
         echo "---------done runner-----"
