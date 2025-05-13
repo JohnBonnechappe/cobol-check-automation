@@ -81,8 +81,8 @@ jobs:
     - name: Setup Mainframe USS Environment and Upload COBOL Check
       if: env.cobolcheck_exists != true
       run: |
-        chmod +x .github/scripts/zowe_operations_t.sh
-        .github/scripts/zowe_operations_t.sh
+        chmod +x .github/scripts/zowe_operations.sh
+        .github/scripts/zowe_operations.sh
         
     - name: Run COBOL Check on Mainframe
       run: |
