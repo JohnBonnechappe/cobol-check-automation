@@ -9,11 +9,11 @@
       
        DATA DIVISION.
        WORKING-STORAGE SECTION.
-          01  exit_sts             PIC 99.
+          01  exit_sts                       PIC 99.
 
           01  dept-record.
-              03 dept-name         PIC X(20).
-              03 dept-loc          PIC X(12).
+              03 dept-name                   PIC X(20).
+              03 dept-loc                    PIC X(12).
               03  dept-manager.
                      05  manager-fname       PIC X(15).
                      05  manager-lname       PIC X(15).
