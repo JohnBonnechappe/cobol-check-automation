@@ -8,6 +8,7 @@
        ENVIRONMENT DIVISION.
       
        DATA DIVISION.
+       FILE SECTION.
        WORKING-STORAGE SECTION.
           01  exit_sts                       PIC 99.
 
